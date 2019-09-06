@@ -1,5 +1,5 @@
 matrix:
   include:
     - language: csharp
-      before_script: cd bexpr.cs.lang
+      before_install: cd bexpr.cs.lang
       solution: BExpr.sln
