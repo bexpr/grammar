@@ -10,5 +10,7 @@ matrix:
       solution: BExpr.sln
       install: dotnet restore BExpr.sln
       script: 
-        - dotnet build BExpr.sln /p:Configuration=Release /p:Version=$PACKAGE_VERSION /p:AssemblyVersion=${PACKAGE_VERSION}.$TRAVIS_BUILD_NUMBER
+        - dotnet build BExpr.sln /p:Configuration=Release /p:Version=${PACKAGE_VERSION}-pre-$TRAVIS_BUILD_NUMBER /p:AssemblyVersion=${PACKAGE_VERSION}.$TRAVIS_BUILD_NUMBER
+      deploy:
+        - dotnet nuget push bin/Release/BExpr.Core.Lang.${PACKAGE_VERSION}-pre-${TRAVIS_BUILD_NUMBER}.nupkg -k $NUGET_API_KEY
         
