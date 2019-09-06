@@ -1,5 +1,12 @@
+env:
+  global:
+    - PACKAGE_VERSION="0.1.0"
 matrix:
   include:
     - language: csharp
       before_install: cd bexpr.cs.lang
       solution: BExpr.sln
+      install: dotnet restore BExpr.sln
+      script: 
+        - dotnet build BExpr.sln /p:Configuration=Release /p:Version=$PACKAGE_VERSION /p:AssemblyVersion=${PACKAGE_VERSION}.$TRAVIS_BUILD_NUMBER
+        
