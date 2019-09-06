@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>BExpr.Core.Lang</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Brian Flynn</Authors>
+    <Product>BExpr</Product>
+    <Description>C# Core Language for the BExpr Language</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/bexpr/grammar</PackageProjectUrl>
+    <PackageIconUrl></PackageIconUrl>
+    <RepositoryUrl>https://github.com/bexpr/grammar</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Expression Language</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Antlr4 Include="..\Expression.g4" Link="Expression.g4" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="antlr4.codegenerator" Version="4.6.6">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="antlr4.runtime" Version="4.6.6" />
+  </ItemGroup>
+</Project>
