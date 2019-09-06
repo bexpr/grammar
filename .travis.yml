@@ -5,6 +5,7 @@ matrix:
   include:
     - language: csharp
       mono: none
+      dotnet: 2.2.401
       before_install: cd bexpr.cs.lang
       solution: BExpr.sln
       install: dotnet restore BExpr.sln
